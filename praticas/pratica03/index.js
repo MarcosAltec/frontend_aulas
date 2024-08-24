@@ -116,24 +116,11 @@ function Cabecalho() {
     return header;
 }
 
-function onClickMenu(event) {
-    const apcoes = [
-        {rota: "/home", titulo: "Home"},
-        {rota: "/perfil", titulo: "Perfil"},
-        {rota: "/login", titulo: "Sair"}
-    ];
-    const lista = document.createElement("ul");
-    opcoes.forEach((opcoes) => {
-        const link = Link(opcao.rota, opcao.titulo);
-        link.addEventListener("click", onClickMenu);
-        const item = document.createElement("li");
-        item.append(link);
-        item.append(item);
-    });
-    const nav = document.createElement("nav");
-    nav.append(lista);
-    return nav;
-}
+function onClickMenu(event){
+    event.preventDefault();
+    Navega(event.target.getAttribute("href"));
+ }
+ 
 
 function Menu() {
     const opcoes = [
