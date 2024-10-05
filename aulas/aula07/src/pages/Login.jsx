@@ -1,13 +1,12 @@
 import FormLogin from "./FormLogin";
-import FormPerfil from "./FormPerfil";
 
 function Login() {
-    return (
-        <>
-        <h1>Login</h1>
-        <FormLogin/>
-        </>
-    )
+  return (
+    <main className="login-container">
+      <h1>Login</h1>
+      <FormLogin />
+    </main>
+  );
 }
 
 export default Login;
