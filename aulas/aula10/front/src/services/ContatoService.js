@@ -1,16 +1,14 @@
 import axios from "axios";
-
+import { get } from "react-hook-form";
 const url = import.meta.env.VITE_URL_API;
 
 //import.meta.env.VITE_URL_API
 
 function carregarContatos() {
-    const dados = [];
-    axios
+    return axios
         .get(url)
-        .then((response) => dados.push(...response.data))
-        .catch((error) => new Error("Deu ruim"));
-    return dados;
+        .then((response) => {return {sucesso: true, dados: response.data}})
+        .catch((error) => {return {sucesso: false, mensagem: error.message}});
 }
 
 function criarContato(contato) {
@@ -22,9 +20,23 @@ function criarContato(contato) {
 
 function atualizarContato(contato) {}
 
-function removerContato(contato) {}
+function removerContato(id) {
+    return (
+        axios
+        .delete(`${url}/${id}`)
+        .then((response) => {return {sucesso: true, dados: response.data}})
+        .catch((error) => {return {sucesso: false, mensagem: error.message}})
+    )
+}
 
-function obterContato(contato) {}
+function obterContato(id) {
+    return (
+        axios
+        .get(`${url}/${id}`)
+        .then((response) => {return {sucesso: true, dados: response.data}})
+        .catch((error) => { return {sucesso: false, mensagem: error.message}})
+    )
+}
 
 export {
     carregarContatos,

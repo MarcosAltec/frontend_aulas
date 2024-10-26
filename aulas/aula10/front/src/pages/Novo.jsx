@@ -25,7 +25,7 @@ function Novo () {
         <Conteudo>
             <h2>Novo Contato</h2>
             {erro && <p>{erro}</p>}
-            <Formulario tratarEnviar={onSalvar}/>
+            <Formulario dados={{}} tratarEnviar={onSalvar}/>
         </Conteudo>
         </>
     )
