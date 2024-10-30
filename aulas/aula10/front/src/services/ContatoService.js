@@ -5,43 +5,67 @@ const url = import.meta.env.VITE_URL_API;
 //import.meta.env.VITE_URL_API
 
 function carregarContatos() {
-    return axios
-        .get(url)
-        .then((response) => {return {sucesso: true, dados: response.data}})
-        .catch((error) => {return {sucesso: false, mensagem: error.message}});
+  return axios
+    .get(url)
+    .then((response) => {
+      return { sucesso: true, dados: response.data };
+    })
+    .catch((error) => {
+      return { sucesso: false, mensagem: error.message };
+    });
 }
 
 function criarContato(contato) {
-    return axios
-        .post(url, contato)
-        .then((response) => {return {sucesso: true, dado: response.data}})
-        .catch((error) => {return {sucesso: false, mensagem: error.message}});
+  return axios
+    .post(url, contato)
+    .then((response) => {
+      return { sucesso: true, dado: response.data };
+    })
+    .catch((error) => {
+      return { sucesso: false, mensagem: error.message };
+    });
 }
 
-function atualizarContato(contato) {}
+function atualizarContato(contato) {
+  return axios
+    .put(`${url}/${contato.id}`, {
+      nome: contato.nome,
+      telefone: contato.telefone,
+    })
+    .then((response) => {
+      return { sucesso: true, dados: response.data };
+    })
+    .catch((error) => {
+      return { sucesso: false, mensagem: error.message };
+    });
+}
 
 function removerContato(id) {
-    return (
-        axios
-        .delete(`${url}/${id}`)
-        .then((response) => {return {sucesso: true, dados: response.data}})
-        .catch((error) => {return {sucesso: false, mensagem: error.message}})
-    )
+  return axios
+    .delete(`${url}/${id}`)
+    .then((response) => {
+      return { sucesso: true, dados: response.data };
+    })
+    .catch((error) => {
+      return { sucesso: false, mensagem: error.message };
+    });
 }
 
 function obterContato(id) {
-    return (
-        axios
-        .get(`${url}/${id}`)
-        .then((response) => {return {sucesso: true, dados: response.data}})
-        .catch((error) => { return {sucesso: false, mensagem: error.message}})
-    )
+  return axios
+    .get(`${url}/${id}`)
+    .then((response) => {
+      return { sucesso: true, dados: response.data };
+    })
+    .catch((error) => {
+      return { sucesso: false, mensagem: error.message };
+    });
 }
 
 export {
-    carregarContatos,
-    criarContato,
-    atualizarContato,
-    removerContato,
-    obterContato
+  carregarContatos,
+  criarContato,
+  atualizarContato,
+  removerContato,
+  obterContato,
 };
