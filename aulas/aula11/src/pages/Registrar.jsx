@@ -11,7 +11,7 @@ function Registrar() {
       <h1>Registrar</h1>
       <button
         onClick={() => {
-            registrar({ email: "marcos@iesb.br", senha: "abc" });
+            registrar({ email: "marcos@iesb.br", senha: "abc123" });
             navigate("/");
         }}>
         Enviar

@@ -1,3 +1,9 @@
 {
-    "users": []
+  "users": [
+    {
+      "email": "marcos@iesb.br",
+      "password": "$2a$10$dkzFuQyOp4aElDO6TWZcd.uM1.zfpj/.0UMgAoNRALlOHCx6KaElC",
+      "id": 1
+    }
+  ]
 }
