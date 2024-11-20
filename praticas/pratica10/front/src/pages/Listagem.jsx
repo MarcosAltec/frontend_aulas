@@ -6,7 +6,7 @@ function Listagem(props) {
         <span>Telefone</span>
         <span>Ações</span>
       </li>
-      {props.itens.map((contato, index) => {
+      {props.itens.map((contato, index) => (
         <li key={index}>
           <span>{contato.nome}</span>
           <span>{contato.telefone}</span>
@@ -14,8 +14,8 @@ function Listagem(props) {
             <button onClick={(e) => props.trataAtualizar(contato.id)}>Atualizar</button>
             <button onClink={(e) => props.tratarRemover(contato.id)}>Remover</button>
           </span>
-        </li>;
-      })}
+        </li>
+      ))}
     </ul>
   );
 }

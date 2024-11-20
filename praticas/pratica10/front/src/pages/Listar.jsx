@@ -6,15 +6,18 @@ import Cabecalho from "../componentes/Cabecalho";
 import Conteudo from "../componentes/Conteudo";
 
 function Listar() {
-  const [contatos, setContatos] = useState("");
+  
+  const [contatos, setContatos] = useState([]);
+  const [erro, setErro ] = useState()
   const navigate = useNavigate();
+
   const trataAtualizar = (id) => {
     navigate(`/editar/${id}`);
   };
   const tratarRemover = async (id) => {
     const resposta = await remover(id);
     if (resposta.sucesso) {
-      carregar();
+      await carregar();
       setErro("");
     } else {
       setErro(resposta.mensagem);
@@ -31,7 +34,7 @@ function Listar() {
   useEffect(() => {
     carregar();
   }, []);
-
+ 
   return (
     <>
       <Cabecalho />

@@ -4,6 +4,16 @@
       "email": "marcos@iesb.br",
       "password": "$2a$10$dkzFuQyOp4aElDO6TWZcd.uM1.zfpj/.0UMgAoNRALlOHCx6KaElC",
       "id": 1
+    },
+    {
+      "email": "maria@iesb.edu",
+      "password": "$2a$10$SjFojt6OThvbKNvciiBqzuYqf6wAkxwVEFrlzxz.G0h27FmYxBj0G",
+      "id": 2
+    },
+    {
+      "email": "cloe@iesb.edu",
+      "password": "$2a$10$uOpFrv006krEkUGcsd4mPuiQoYDr1YLbe0CTBGn41.ED7ap8Ovq1i",
+      "id": 3
     }
   ]
 }
