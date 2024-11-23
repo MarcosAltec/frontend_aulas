@@ -13,9 +13,9 @@ function buscarTodos() {
     });
 }
 
-function buscarUm() {
+function buscarUm(id) {
   return axios
-    .get(`url/${id}`)
+    .get(`${url}/${id}`)
     .then((response) => {
       return { sucesso: true, dados: response.data };
     })
@@ -24,7 +24,7 @@ function buscarUm() {
     });
 }
 
-function adicionar() {
+function adicionar(contato) {
   return axios
     .post(url, contato)
     .then((response) => {
@@ -35,7 +35,7 @@ function adicionar() {
     });
 }
 
-function atualizar() {
+function atualizar(contato) {
   return axios
     .put(`url/${contato.id}`, {
       nome: contato.nome,
@@ -49,9 +49,9 @@ function atualizar() {
     });
 }
 
-function remover() {
+function remover(id) {
   return axios
-    .delete(`url/${id}`)
+    .delete(`${url}/${id}`)
     .then((response) => {
       return { sucesso: true, dados: response.data };
     })

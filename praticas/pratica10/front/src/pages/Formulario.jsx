@@ -1,3 +1,4 @@
+import { useForm } from 'react-hook-form'
 import InputNome from "../componentes/InputNome";
 import InputTelefone from "../componentes/InputTelefone";
 
@@ -10,9 +11,9 @@ function Formulario(props) {
 
   return (
     <form onSubmit={handleSubmit(props.trataEnviar)}>
-        <InputNome />
-        <InputTelefone />
-        <button type="subit">Salvar</button>
+        <InputNome register={register} error={errors.nome}/>
+        <InputTelefone register={register} error={errors.telefone}/>
+        <button type="submit">Salvar</button>
     </form>
   )
 }

@@ -7,10 +7,12 @@ import { atualizar, buscarUm } from "../services/ContatoService";
 
 function Editar() {
     const [contato, setContato] = useState({});
+    const navigate = useNavigate();
     const [erro, setErro] = useState("");
     const {id} = useParams();
     const carregar = async () => {
       const resposta = await buscarUm(id);
+
       if (resposta.sucesso) {
         setContato(resposta.dados);
       } else {

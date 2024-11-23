@@ -1,5 +1,19 @@
 {
-    "contatos": [
-        {"id": "la2b", "nome": "Jose", "telefone": "99999-9999"}
-    ]
+  "contatos": [
+    {
+      "id": "la2b",
+      "nome": "Jose",
+      "telefone": "99999-9999"
+    },
+    {
+      "id": "7680",
+      "nome": "Marcos Passos",
+      "telefone": "321654"
+    },
+    {
+      "id": "6490",
+      "nome": "Marcos Passos",
+      "telefone": "321654"
+    }
+  ]
 }

@@ -6,9 +6,10 @@ import Formulario from "./Formulario";
 import { adicionar } from "../services/ContatoService";
 
 function Novo() {
-  const [erro, setErro] = useState("");
-  const trataEnviar = (data) => {
-    const resposta = adicionar(data);
+  const [erro, setErro] = useState(""); 
+  const navigate = useNavigate();
+  const trataEnviar = async (data) => {
+    const resposta = await adicionar(data);
     if (resposta.sucesso) {
       navigate("/");
    } else {
